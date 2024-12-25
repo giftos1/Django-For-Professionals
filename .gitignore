@@ -1,4 +1,4 @@
 *.sqlite3
 postgres
-.idea
+.idea/
 __pycache__/
