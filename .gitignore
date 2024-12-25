@@ -1,2 +1,2 @@
-ch4-bookstore/db.sqlite3
-ch4-bookstore/postgres
+*.sqlite3
+postgres
