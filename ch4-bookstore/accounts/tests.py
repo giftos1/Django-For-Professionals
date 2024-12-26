@@ -49,7 +49,6 @@ class SignUpPageTests(TestCase):
 
     def test_signup_form(self):
         form = self.response.context.get('form')
-        print(form)
         self.assertIsInstance(form, CustomUserCreationForm)
         self.assertContains(self.response, "csrfmiddlewaretoken")
 
