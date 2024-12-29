@@ -1,5 +1,6 @@
-*.sqlite3
-postgres
-.venv/
+.venv
 .idea/
 __pycache__/
+db.sqlite3
+postgres
+docker-compose-prod.yml
