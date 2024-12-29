@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-
+import socket
 from environs import Env
 
 env = Env()
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'allauth',
     'allauth.account',
+    'debug_toolbar',
     # Local
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
@@ -64,7 +65,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware'
+    'allauth.account.middleware.AccountMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'bookstore_project.urls'
@@ -161,3 +163,7 @@ ACCOUNT_EMAIL_REQUIRED = True  # email sign up
 ACCOUNT_AUTHENTICATION_METHOD = 'email'  # Email only login
 ACCOUNT_UNIQUE_EMAIL = True
 DEFAULT_FROM_EMAIL = 'admin@djangobookstore.com'
+
+# django-debug-toolbar
+hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+INTERNAL_IPS = [ip[:-1] + '1' for ip in ips]
