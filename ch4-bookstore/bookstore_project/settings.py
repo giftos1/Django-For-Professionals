@@ -39,6 +39,7 @@ CSRF_COOKIE_SECURE = env.bool("DJANGO_CSRF_COOKIE_SECURE", default=True)
 DEBUG = env.bool("DJANGO_DEBUG", default=False)
 
 ALLOWED_HOSTS = [
+    "morning-waters-14123-83fdd5e7c61a.herokuapp.com",
     "localhost",
     "127.0.0.1",
     ".herokuapp.com",
